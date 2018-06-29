@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlightSchedule.Domain.Model;
+﻿using FlightSchedule.Domain.Model;
 using FlightSchedule.Domain.Shared;
 using Framework.Core;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FlightSchedule.Domain.Services
 {
@@ -14,7 +12,11 @@ namespace FlightSchedule.Domain.Services
         public static List<Flight> Calculate(ReserveSchedule schedule)
         {
             var flights = new List<Flight>();
-            foreach (var dateTime in schedule.StartReserveDate.EachDay(schedule.EndReserveDate))
+            foreach (var dateTime in schedule.StartReserveDate
+                                             .SpecificDays(schedule.EndReserveDate,
+                                                          schedule.WeeklyTimetable
+                                                                  .Select(a => a.DayOfWeek)
+                                                                  .ToArray()))
             {
                 var dayOfWeekInReserves = FindDayInWeek(schedule, dateTime);
                 if (HasFlightInDay(dayOfWeekInReserves))
@@ -27,7 +29,7 @@ namespace FlightSchedule.Domain.Services
             return flights;
         }
 
-       
+
 
         private static WeeklyTimetable FindDayInWeek(ReserveSchedule schedule, DateTime dateTime)
         {
