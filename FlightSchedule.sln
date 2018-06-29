@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Domain", "FlightSchedule.Domain\FlightSchedule.Domain.csproj", "{5A5F878C-0AEC-4FD9-83C3-72C689004425}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Specs", "FlightSchedule.Specs\FlightSchedule.Specs.csproj", "{241D10EB-07A0-4C7D-9F31-807E91862E67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5A5F878C-0AEC-4FD9-83C3-72C689004425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A5F878C-0AEC-4FD9-83C3-72C689004425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A5F878C-0AEC-4FD9-83C3-72C689004425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241D10EB-07A0-4C7D-9F31-807E91862E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241D10EB-07A0-4C7D-9F31-807E91862E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241D10EB-07A0-4C7D-9F31-807E91862E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241D10EB-07A0-4C7D-9F31-807E91862E67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
