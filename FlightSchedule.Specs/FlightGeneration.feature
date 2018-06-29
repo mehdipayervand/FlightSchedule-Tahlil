@@ -9,9 +9,9 @@ Scenario: Generate flights from weekly flight plan
 	| Aircraft    | FlightNo | Origin | Destination | StartReserveDate | EndReserveDate |
 	| Airbus-W350 | WS-2040  | IKA    | FRA         | 2018-03-17       | 2018-04-01     |
 	And I have entered the following weekly flight schedule
-	 | Day       | DepartTime | ArriveTime |
-	 | Monday    | 08:00      | 9:30       |
-	 | Wednesday | 17:00      | 18:30      |
+	 | Day       | DepartTime |
+	 | Monday    | 08:00      |
+	 | Wednesday | 17:00      |
 	 When I press generate
 	 Then The following flights should be generated
 	 | DepartDate | Aircraft    | FlightNo | Origin | Destination |

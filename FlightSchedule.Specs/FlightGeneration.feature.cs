@@ -94,16 +94,13 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Day",
-                        "DepartTime",
-                        "ArriveTime"});
+                        "DepartTime"});
             table2.AddRow(new string[] {
                         "Monday",
-                        "08:00",
-                        "9:30"});
+                        "08:00"});
             table2.AddRow(new string[] {
                         "Wednesday",
-                        "17:00",
-                        "18:30"});
+                        "17:00"});
 #line 11
  testRunner.And("I have entered the following weekly flight schedule", ((string)(null)), table2, "And ");
 #line 15
