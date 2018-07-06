@@ -36,7 +36,7 @@ namespace FlightSchedule.Domain.Tests.Unit.Services
                 new Flight(new DateTime(2018,3,28,15,0,0),null,null,route),
             };
 
-            var actualFlights = FlightCalculationService.Calculate(reserveSchedule);
+            var actualFlights = new FlightCalculationService().Calculate(reserveSchedule);
             actualFlights.Should().BeEquivalentTo(expectedFlights);
         }
     }
