@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5478FE3E-692A-4048-999C-ABE451AA3463}</ProjectGuid>
+    <ProjectGuid>{5F6D7871-F99D-49F6-96C8-075A1077C6E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlightSchedule.Persistence.EF.Tests.Integration</RootNamespace>
-    <AssemblyName>FlightSchedule.Persistence.EF.Tests.Integration</AssemblyName>
+    <RootNamespace>FlightSchedule.Application.Tests.Unit</RootNamespace>
+    <AssemblyName>FlightSchedule.Application.Tests.Unit</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,21 +38,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentAssertions, Version=5.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.4.1\lib\net45\FluentAssertions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NSubstitute, Version=3.1.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSubstitute.3.1.0\lib\net46\NSubstitute.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Transactions" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
       <Private>True</Private>
@@ -85,29 +89,27 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="PersistTest.cs" />
-    <Compile Include="FlightPersistenceTests.cs" />
+    <Compile Include="FlightServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FlightSchedule.Application\FlightSchedule.Application.csproj">
+      <Project>{6BB3E9ED-50AF-4053-80F2-EBFA373F1A7F}</Project>
+      <Name>FlightSchedule.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Domain.TestUtil\FlightSchedule.Domain.TestUtil.csproj">
-      <Project>{1afb5188-9fab-47f3-b7ce-b6d895970bf6}</Project>
+      <Project>{1AFB5188-9FAB-47F3-B7CE-B6D895970BF6}</Project>
       <Name>FlightSchedule.Domain.TestUtil</Name>
     </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Domain\FlightSchedule.Domain.csproj">
       <Project>{5A5F878C-0AEC-4FD9-83C3-72C689004425}</Project>
       <Name>FlightSchedule.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FlightSchedule.Persistence.EF\FlightSchedule.Persistence.EF.csproj">
-      <Project>{fb8281f2-c2ca-49db-901d-1d9039dd576d}</Project>
-      <Name>FlightSchedule.Persistence.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

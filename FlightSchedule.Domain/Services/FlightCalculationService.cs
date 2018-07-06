@@ -7,9 +7,9 @@ using System.Linq;
 
 namespace FlightSchedule.Domain.Services
 {
-    public class FlightCalculationService
+    public class FlightCalculationService : IFlightCalculationService
     {
-        public static List<Flight> Calculate(ReserveSchedule schedule)
+        public List<Flight> Calculate(ReserveSchedule schedule)
         {
             var flights = new List<Flight>();
             foreach (var dateTime in schedule.StartReserveDate

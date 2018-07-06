@@ -11,7 +11,6 @@ namespace FlightSchedule.Domain.Model
         public string Origin { get; private set; }
         public string Destination { get; private set; }
         protected Route() { }
-
         public Route(string origin, string destination)
         {
             if(OriginIsSameAsDestination(origin, destination))
@@ -20,7 +19,6 @@ namespace FlightSchedule.Domain.Model
             this.Origin = origin.ToUpper();
             this.Destination = destination.ToUpper();
         }
-
         private static bool OriginIsSameAsDestination(string origin, string destination)
         {
             return origin.ToUpper().Equals(destination.ToUpper());

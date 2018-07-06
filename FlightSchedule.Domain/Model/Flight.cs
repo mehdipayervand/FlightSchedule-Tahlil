@@ -8,6 +8,7 @@ namespace FlightSchedule.Domain.Model
 {
     public class Flight
     {
+        public long Id { get; set; }
         public DateTime DepartDate { get; set; }
         public string AirCraft { get; set; }
         public string FlightNo { get; set; }

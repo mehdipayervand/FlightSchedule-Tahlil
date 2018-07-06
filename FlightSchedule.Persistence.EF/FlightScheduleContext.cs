@@ -11,11 +11,11 @@ namespace FlightSchedule.Persistence.EF
     public class FlightScheduleContext : DbContext
     {
         public DbSet<Flight> Flights { get; set; }
-        public DbSet<Route> Routes { get; set; }
-
         public FlightScheduleContext() :base("DBConnection")
         {
             
         }
+
+        
     }
 }
