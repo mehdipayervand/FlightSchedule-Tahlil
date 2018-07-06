@@ -13,6 +13,7 @@ namespace FlightSchedule.Domain.Model
         public string FlightNo { get; set; }
         public Route Route { get; set; }
 
+        protected Flight() { }
         public Flight(DateTime departDate, string aircraft, string flightNo, Route route)
         {
             this.DepartDate = departDate;

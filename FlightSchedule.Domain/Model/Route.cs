@@ -10,6 +10,8 @@ namespace FlightSchedule.Domain.Model
     {
         public string Origin { get; private set; }
         public string Destination { get; private set; }
+        protected Route() { }
+
         public Route(string origin, string destination)
         {
             if(OriginIsSameAsDestination(origin, destination))

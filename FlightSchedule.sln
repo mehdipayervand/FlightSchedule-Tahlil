@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{B220DEE9-053A-4F2E-A4D4-3480C9D29FAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Persistence.EF", "FlightSchedule.Persistence.EF\FlightSchedule.Persistence.EF.csproj", "{FB8281F2-C2CA-49DB-901D-1D9039DD576D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Persistence.EF.Tests.Integration", "FlightSchedule.Persistence.EF.Tests.Integration\FlightSchedule.Persistence.EF.Tests.Integration.csproj", "{5478FE3E-692A-4048-999C-ABE451AA3463}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +49,14 @@ Global
 		{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8281F2-C2CA-49DB-901D-1D9039DD576D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8281F2-C2CA-49DB-901D-1D9039DD576D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8281F2-C2CA-49DB-901D-1D9039DD576D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8281F2-C2CA-49DB-901D-1D9039DD576D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5478FE3E-692A-4048-999C-ABE451AA3463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5478FE3E-692A-4048-999C-ABE451AA3463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5478FE3E-692A-4048-999C-ABE451AA3463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5478FE3E-692A-4048-999C-ABE451AA3463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +66,7 @@ Global
 		{B1565D8D-F450-4F76-BED4-7B3FD84E292E} = {FB5F9F8B-62DB-413A-BBBC-7FCA41D851D7}
 		{1AFB5188-9FAB-47F3-B7CE-B6D895970BF6} = {FB5F9F8B-62DB-413A-BBBC-7FCA41D851D7}
 		{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4} = {3EAEC28F-7995-406D-B237-74617BA2E47D}
+		{FB8281F2-C2CA-49DB-901D-1D9039DD576D} = {B220DEE9-053A-4F2E-A4D4-3480C9D29FAF}
+		{5478FE3E-692A-4048-999C-ABE451AA3463} = {B220DEE9-053A-4F2E-A4D4-3480C9D29FAF}
 	EndGlobalSection
 EndGlobal
