@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Castle.Components.DictionaryAdapter;
 using FlightSchedule.Domain.Model;
 using FlightSchedule.Domain.Services;
 using FlightSchedule.Domain.Shared;
-using FlightSchedule.Domain.TestUtil;
 using FluentAssertions;
 using NSubstitute;
 using Xunit;
+using Xunit.Sdk;
 
 namespace FlightSchedule.Application.Tests.Unit
 {
@@ -19,7 +18,7 @@ namespace FlightSchedule.Application.Tests.Unit
         {
             var schedule = new ReserveSchedule();
             var calculationService = Substitute.For<IFlightCalculationService>();
-            var calculatedFlights = GetSomeFlights(2).ToList();
+            var calculatedFlights = new FlightsTestListBuilder().GetSomeFlights(2).ToList();
             calculationService.Calculate(schedule).Returns(calculatedFlights);
             var repository = Substitute.For<IFlightRepository>();
             var flightService = new FlightService(repository, calculationService);
@@ -29,15 +28,9 @@ namespace FlightSchedule.Application.Tests.Unit
             repository.Received(1).Save(calculatedFlights[0]);
             repository.Received(1).Save(calculatedFlights[1]);
         }
-
+        
+        
         //TODO: move to another class :)
-        private IEnumerable<Flight> GetSomeFlights(long count)
-        {
-            var builder = new FlightTestBuilder();
-            for (int i = 0; i < count; i++)
-            {
-                yield return builder.Build();
-            }
-        }
+        //Ghomi: Codes Just Moved to FlightsTestListBuilder Class ;)
     }
 }

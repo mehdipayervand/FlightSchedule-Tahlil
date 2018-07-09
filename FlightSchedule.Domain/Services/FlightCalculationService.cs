@@ -28,9 +28,6 @@ namespace FlightSchedule.Domain.Services
             }
             return flights;
         }
-
-
-
         private static WeeklyTimetable FindDayInWeek(ReserveSchedule schedule, DateTime dateTime)
         {
             return schedule.WeeklyTimetable.FirstOrDefault(a => a.DayOfWeek == dateTime.DayOfWeek);
