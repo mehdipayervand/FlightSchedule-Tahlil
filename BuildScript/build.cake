@@ -10,11 +10,6 @@ Task("Clean")
         CleanDirectories("../**/obj/" + configuration);
 });
 
-Task("Restore-Nuget")
-    .Does(()=>{
-        NuGetRestore("../FlightSchedule.sln");
-});
-
 Task("Build")
     .Does(()=>{
         MSBuild("../FlightSchedule.sln", configurator =>
@@ -53,7 +48,6 @@ Task("Publish-Website")
 
 Task("Default")
     .IsDependentOn("Clean")
-    .IsDependentOn("Restore-Nuget")
     .IsDependentOn("Build")
     .IsDependentOn("Run-Unit-Tests");
     // .IsDependentOn("Backup-Website")
