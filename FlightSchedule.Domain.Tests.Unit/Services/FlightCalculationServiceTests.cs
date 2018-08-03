@@ -42,8 +42,8 @@ namespace FlightSchedule.Domain.Tests.Unit.Services
                 Route = route,
                 WeeklyTimetable = new List<WeeklyTimetable>()
                 {
-                    new WeeklyTimetable() { DayOfWeek = DayOfWeek.Monday, DepartTime = new TimeSpan(8,0,0)},
-                    new WeeklyTimetable() { DayOfWeek = DayOfWeek.Wednesday, DepartTime = new TimeSpan(15,0,0)}
+                    new WeeklyTimetable(DayOfWeek.Monday, new TimeSpan(8,0,0)),
+                    new WeeklyTimetable(DayOfWeek.Wednesday, new TimeSpan(15,0,0))
                 }
             };
         }

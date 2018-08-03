@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Domain", "FlightSchedule.Domain\FlightSchedule.Domain.csproj", "{5A5F878C-0AEC-4FD9-83C3-72C689004425}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Application.Tests.Unit", "FlightSchedule.Application.Tests.Unit\FlightSchedule.Application.Tests.Unit.csproj", "{5F6D7871-F99D-49F6-96C8-075A1077C6E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Config", "FlightSchedule.Config\FlightSchedule.Config.csproj", "{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Application.Contracts", "FlightSchedule.Application.Contracts\FlightSchedule.Application.Contracts.csproj", "{B68CE400-7F22-4BCC-B2B6-42583F6FE515}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68CE400-7F22-4BCC-B2B6-42583F6FE515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68CE400-7F22-4BCC-B2B6-42583F6FE515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68CE400-7F22-4BCC-B2B6-42583F6FE515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68CE400-7F22-4BCC-B2B6-42583F6FE515}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,5 +109,9 @@ Global
 		{6BB3E9ED-50AF-4053-80F2-EBFA373F1A7F} = {F1CB96BC-DC29-41E7-821D-97E3975A6B2C}
 		{5F6D7871-F99D-49F6-96C8-075A1077C6E3} = {F1CB96BC-DC29-41E7-821D-97E3975A6B2C}
 		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF} = {4574B06F-13F9-434E-9D95-3EE62A8A06B5}
+		{B68CE400-7F22-4BCC-B2B6-42583F6FE515} = {F1CB96BC-DC29-41E7-821D-97E3975A6B2C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D5B38FA-464D-464D-8F31-35C9E64ADC6E}
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FlightSchedule.Domain.Model.Exceptions;
 
 namespace FlightSchedule.Domain.Model
 {
@@ -14,10 +14,10 @@ namespace FlightSchedule.Domain.Model
         public Route(string origin, string destination)
         {
             if(OriginIsSameAsDestination(origin, destination))
-                throw new Exception();
+                throw new OriginIsSameAsDestinationException();
 
-            this.Origin = origin.ToUpper();
-            this.Destination = destination.ToUpper();
+            Origin = origin.ToUpper();
+            Destination = destination.ToUpper();
         }
         private static bool OriginIsSameAsDestination(string origin, string destination)
         {

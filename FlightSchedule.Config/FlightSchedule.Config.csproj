@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FlightSchedule.Application.Contracts\FlightSchedule.Application.Contracts.csproj">
+      <Project>{B68CE400-7F22-4BCC-B2B6-42583F6FE515}</Project>
+      <Name>FlightSchedule.Application.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Application\FlightSchedule.Application.csproj">
       <Project>{6bb3e9ed-50af-4053-80f2-ebfa373f1a7f}</Project>
       <Name>FlightSchedule.Application</Name>

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using FlightSchedule.Application;
+using FlightSchedule.Application.Contracts;
 using FlightSchedule.Domain.Model;
 using FlightSchedule.Domain.Services;
 using FlightSchedule.Persistence.EF;

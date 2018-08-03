@@ -9,7 +9,7 @@ namespace FlightSchedule.Application.Tests.Unit
         internal IEnumerable<Flight> GetSomeFlights(long count)
         {
             var builder = new FlightTestBuilder();
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
                 yield return builder.Build();
             }
