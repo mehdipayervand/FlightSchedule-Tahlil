@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Application.Tests.Unit", "FlightSchedule.Application.Tests.Unit\FlightSchedule.Application.Tests.Unit.csproj", "{5F6D7871-F99D-49F6-96C8-075A1077C6E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Config", "FlightSchedule.Config\FlightSchedule.Config.csproj", "{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{5F6D7871-F99D-49F6-96C8-075A1077C6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F6D7871-F99D-49F6-96C8-075A1077C6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F6D7871-F99D-49F6-96C8-075A1077C6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +102,6 @@ Global
 		{F1CB96BC-DC29-41E7-821D-97E3975A6B2C} = {4574B06F-13F9-434E-9D95-3EE62A8A06B5}
 		{6BB3E9ED-50AF-4053-80F2-EBFA373F1A7F} = {F1CB96BC-DC29-41E7-821D-97E3975A6B2C}
 		{5F6D7871-F99D-49F6-96C8-075A1077C6E3} = {F1CB96BC-DC29-41E7-821D-97E3975A6B2C}
+		{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF} = {4574B06F-13F9-434E-9D95-3EE62A8A06B5}
 	EndGlobalSection
 EndGlobal

@@ -16,6 +16,7 @@ namespace FlightSchedule.Application.Tests.Unit
         [Fact]
         public void GenerateFlights_should_calculate_flights_and_save_them()
         {
+            //TODO: refactor this test (use a factory or builder)
             var schedule = new ReserveSchedule();
             var calculationService = Substitute.For<IFlightCalculationService>();
             var calculatedFlights = new FlightsTestListBuilder().GetSomeFlights(2).ToList();

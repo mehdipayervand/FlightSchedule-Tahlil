@@ -3,9 +3,9 @@
 	As a agency manager
 	I want to be able to generate flights in batch from schedule
 
-@mytag
+@api
 Scenario: Generate flights from weekly flight plan
-	Given I have reserved a flight with following information
+	Given I have reserved a charter flight from airline with following information
 	| Aircraft    | FlightNo | Origin | Destination | StartReserveDate | EndReserveDate |
 	| Airbus-W350 | WS-2040  | IKA    | FRA         | 2018-03-17       | 2018-04-01     |
 	And I have entered the following weekly flight schedule

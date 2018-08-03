@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace FlightSchedule.Specs
+namespace FlightSchedule.Specs.Features
 {
     using TechTalk.SpecFlow;
     
@@ -75,11 +75,11 @@ namespace FlightSchedule.Specs
         [Xunit.FactAttribute(DisplayName="Generate flights from weekly flight plan")]
         [Xunit.TraitAttribute("FeatureTitle", "FlightGeneration")]
         [Xunit.TraitAttribute("Description", "Generate flights from weekly flight plan")]
-        [Xunit.TraitAttribute("Category", "mytag")]
+        [Xunit.TraitAttribute("Category", "api")]
         public virtual void GenerateFlightsFromWeeklyFlightPlan()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generate flights from weekly flight plan", new string[] {
-                        "mytag"});
+                        "api"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -98,7 +98,7 @@ this.ScenarioSetup(scenarioInfo);
                         "2018-03-17",
                         "2018-04-01"});
 #line 8
- testRunner.Given("I have reserved a flight with following information", ((string)(null)), table1, "Given ");
+ testRunner.Given("I have reserved a charter flight from airline with following information", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Day",

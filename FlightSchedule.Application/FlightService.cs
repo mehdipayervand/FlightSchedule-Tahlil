@@ -9,7 +9,7 @@ using FlightSchedule.Domain.Shared;
 
 namespace FlightSchedule.Application
 {
-    public class FlightService
+    public class FlightService : IFlightService
     {
         private readonly IFlightRepository _repository;
         private readonly IFlightCalculationService _calculationService;
