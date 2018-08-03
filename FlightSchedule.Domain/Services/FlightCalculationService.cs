@@ -4,6 +4,7 @@ using Framework.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FlightSchedule.Domain.Services.Exceptions;
 
 namespace FlightSchedule.Domain.Services
 {
@@ -27,8 +28,8 @@ namespace FlightSchedule.Domain.Services
                 }
             }
 
-            if (flights == null)
-                throw new Exception();
+            if (flights.Count == 0)
+                throw new ThereAreNoFlightsInTheSpecifiedPeriodException();
 
             return flights;
         }

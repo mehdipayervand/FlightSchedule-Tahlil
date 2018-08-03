@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlightTestBuilder.cs" />
+    <Compile Include="ReserveScheduleBuilder.cs" />
     <Compile Include="RouteTestBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,6 +49,10 @@
     <ProjectReference Include="..\FlightSchedule.Domain\FlightSchedule.Domain.csproj">
       <Project>{5A5F878C-0AEC-4FD9-83C3-72C689004425}</Project>
       <Name>FlightSchedule.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}</Project>
+      <Name>Framework.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

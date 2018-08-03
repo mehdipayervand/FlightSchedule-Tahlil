@@ -99,6 +99,10 @@
       <Project>{5a5f878c-0aec-4fd9-83c3-72c689004425}</Project>
       <Name>FlightSchedule.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />

@@ -14,24 +14,24 @@ namespace FlightSchedule.Domain.TestUtil
 
         public RouteTestBuilder()
         {
-            this.Origin = "IKA";
-            this.Destination = "DXB";
+            Origin = "IKA";
+            Destination = "DXB";
         }
         public RouteTestBuilder WithOrigin(string origin)
         {
-            this.Origin = origin;
+            Origin = origin;
             return this;
         }
 
         public RouteTestBuilder WithDestination(string destination)
         {
-            this.Destination = destination;
+            Destination = destination;
             return this;
         }
 
         public Route Build()
         {
-            return new Route(this.Origin, this.Destination);
+            return new Route(Origin, Destination);
         } 
     }
 }
