@@ -4,6 +4,7 @@ using Framework.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FlightSchedule.Domain.Services.Exceptions;
 
 namespace FlightSchedule.Domain.Services
 {
@@ -13,10 +14,10 @@ namespace FlightSchedule.Domain.Services
         {
             var flights = new List<Flight>();
             foreach (var dateTime in schedule.StartReserveDate
-                                             .SpecificDays(schedule.EndReserveDate,
-                                                          schedule.WeeklyTimetable
-                                                                  .Select(a => a.DayOfWeek)
-                                                                  .ToArray()))
+                .SpecificDays(schedule.EndReserveDate,
+                    schedule.WeeklyTimetable
+                        .Select(a => a.DayOfWeek)
+                        .ToArray()))
             {
                 var dayOfWeekInReserves = FindDayInWeek(schedule, dateTime);
                 if (HasFlightInDay(dayOfWeekInReserves))
@@ -26,16 +27,23 @@ namespace FlightSchedule.Domain.Services
                     flights.Add(flight);
                 }
             }
+
+            if (flights.Count == 0)
+                throw new ThereAreNoFlightsInTheSpecifiedPeriodException();
+
             return flights;
         }
+
         private static WeeklyTimetable FindDayInWeek(ReserveSchedule schedule, DateTime dateTime)
         {
             return schedule.WeeklyTimetable.FirstOrDefault(a => a.DayOfWeek == dateTime.DayOfWeek);
         }
+
         private static bool HasFlightInDay(WeeklyTimetable dayOfWeekInReserves)
         {
             return dayOfWeekInReserves != null;
         }
+
         private static DateTime CalculateDepartDate(DateTime dateTime, WeeklyTimetable dayOfWeekInReserves)
         {
             var departDate = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);

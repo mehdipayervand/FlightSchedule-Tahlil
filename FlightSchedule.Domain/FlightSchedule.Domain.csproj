@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="Model\IFlightRepository.cs" />
     <Compile Include="Model\Flight.cs" />
+    <Compile Include="Model\Exceptions\OriginIsSameAsDestinationException.cs" />
     <Compile Include="Model\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Exceptions\ThereAreNoFlightsInTheSpecifiedPeriodException.cs" />
     <Compile Include="Services\FlightCalculationService.cs" />
     <Compile Include="Services\IFlightCalculationService.cs" />
     <Compile Include="Shared\ReserveSchedule.cs" />

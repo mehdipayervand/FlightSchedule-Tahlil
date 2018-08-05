@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -151,17 +152,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FlightSchedule.Application\FlightSchedule.Application.csproj">
-      <Project>{6BB3E9ED-50AF-4053-80F2-EBFA373F1A7F}</Project>
-      <Name>FlightSchedule.Application</Name>
+    <ProjectReference Include="..\FlightSchedule.Application.Contracts\FlightSchedule.Application.Contracts.csproj">
+      <Project>{B68CE400-7F22-4BCC-B2B6-42583F6FE515}</Project>
+      <Name>FlightSchedule.Application.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Config\FlightSchedule.Config.csproj">
       <Project>{8B5C8DFF-88B5-4EA6-A50C-EE5BF5AAF9DF}</Project>
       <Name>FlightSchedule.Config</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FlightSchedule.Domain\FlightSchedule.Domain.csproj">
-      <Project>{5A5F878C-0AEC-4FD9-83C3-72C689004425}</Project>
-      <Name>FlightSchedule.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

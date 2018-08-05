@@ -49,7 +49,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NSubstitute, Version=3.1.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
       <HintPath>..\packages\NSubstitute.3.1.0\lib\net46\NSubstitute.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -89,6 +88,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="FlightServiceBuilder.cs" />
     <Compile Include="FlightsTestListBuilder.cs" />
     <Compile Include="FlightServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +100,10 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FlightSchedule.Application.Contracts\FlightSchedule.Application.Contracts.csproj">
+      <Project>{B68CE400-7F22-4BCC-B2B6-42583F6FE515}</Project>
+      <Name>FlightSchedule.Application.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Application\FlightSchedule.Application.csproj">
       <Project>{6BB3E9ED-50AF-4053-80F2-EBFA373F1A7F}</Project>
       <Name>FlightSchedule.Application</Name>

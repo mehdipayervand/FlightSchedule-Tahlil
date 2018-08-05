@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1AFB5188-9FAB-47F3-B7CE-B6D895970BF6}</ProjectGuid>
+    <ProjectGuid>{B68CE400-7F22-4BCC-B2B6-42583F6FE515}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlightSchedule.Domain.TestUtil</RootNamespace>
-    <AssemblyName>FlightSchedule.Domain.TestUtil</AssemblyName>
+    <RootNamespace>FlightSchedule.Application.Contracts</RootNamespace>
+    <AssemblyName>FlightSchedule.Application.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,9 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlightTestBuilder.cs" />
-    <Compile Include="ReserveScheduleBuilder.cs" />
-    <Compile Include="RouteTestBuilder.cs" />
+    <Compile Include="DataTransferObjects\ReserveScheduleDto.cs" />
+    <Compile Include="DataTransferObjects\WeeklyTimetableDto.cs" />
+    <Compile Include="IFlightService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,17 +50,6 @@
       <Project>{5A5F878C-0AEC-4FD9-83C3-72C689004425}</Project>
       <Name>FlightSchedule.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
-      <Project>{FEB70B88-21B8-4AC5-997E-A2F81B54FAA4}</Project>
-      <Name>Framework.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

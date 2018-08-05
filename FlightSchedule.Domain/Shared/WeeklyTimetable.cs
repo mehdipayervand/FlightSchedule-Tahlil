@@ -6,5 +6,11 @@ namespace FlightSchedule.Domain.Shared
     {
         public DayOfWeek DayOfWeek { get; set; }
         public TimeSpan DepartTime { get; set; }
+
+        public WeeklyTimetable(DayOfWeek dayOfWeek, TimeSpan departTime)
+        {
+            DayOfWeek = dayOfWeek;
+            DepartTime = departTime;
+        }
     }
 }

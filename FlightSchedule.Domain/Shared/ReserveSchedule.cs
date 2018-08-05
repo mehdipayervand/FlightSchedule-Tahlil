@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FlightSchedule.Domain.Model;
 
 namespace FlightSchedule.Domain.Shared
@@ -15,5 +12,20 @@ namespace FlightSchedule.Domain.Shared
         public DateTime StartReserveDate { get; set; }
         public DateTime EndReserveDate { get; set; }
         public List<WeeklyTimetable> WeeklyTimetable { get; set; }
+
+        public ReserveSchedule()
+        {
+            
+        }
+
+        public ReserveSchedule(string aircraft, string flightNo, Route route, DateTime startReserveDate, DateTime endReserveDate, List<WeeklyTimetable> weeklyTimetable)
+        {
+            Aircraft = aircraft;
+            FlightNo = flightNo;
+            Route = route;
+            StartReserveDate = startReserveDate;
+            EndReserveDate = endReserveDate;
+            WeeklyTimetable = weeklyTimetable;
+        }
     }
 }

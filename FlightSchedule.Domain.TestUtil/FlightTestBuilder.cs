@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightSchedule.Domain.Model;
+using Framework.Core.Clock;
 
 namespace FlightSchedule.Domain.TestUtil
 {
@@ -16,10 +17,34 @@ namespace FlightSchedule.Domain.TestUtil
 
         public FlightTestBuilder()
         {
-            this.DepartDate = DateTime.Now.AddDays(5);
-            this.Aircraft = "AIRBUS";
-            this.FlightNo = "2020";
-            this.Route = new RouteTestBuilder().Build();
+            DepartDate = TravelTo.SomeFutureTime();
+            Aircraft = "AIRBUS";
+            FlightNo = "2020";
+            Route = new RouteTestBuilder().Build();
+        }
+
+        public FlightTestBuilder WithDepartDate(DateTime departDate)
+        {
+            DepartDate = departDate;
+            return this;
+        }
+
+        public FlightTestBuilder WithAircraft(string aircraft)
+        {
+            Aircraft = aircraft;
+            return this;
+        }
+
+        public FlightTestBuilder WithFlightNo(string flightNo)
+        {
+            FlightNo = flightNo;
+            return this;
+        }
+
+        public FlightTestBuilder WithRoute(Route route)
+        {
+            Route = route;
+            return this;
         }
 
         public Flight Build()
