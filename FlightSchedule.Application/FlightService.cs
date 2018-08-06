@@ -29,6 +29,15 @@ namespace FlightSchedule.Application
             }
         }
 
+        public void GenerateFlights(ReserveSchedule reserveSchedule)
+        {
+            var flights = _calculationService.Calculate(reserveSchedule);
+            foreach (var flight in flights)
+            {
+                _repository.Save(flight);
+            }
+        }
+
         private ReserveSchedule Map(ReserveScheduleDto command)
         {
             return new ReserveSchedule

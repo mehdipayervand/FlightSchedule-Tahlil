@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using FlightSchedule.Application.Contracts.DataTransferObjects;
-using FlightSchedule.Domain.Model;
-using FlightSchedule.Domain.Services;
-using FlightSchedule.Domain.Shared;
-using NSubstitute;
+﻿using NSubstitute;
 using Xunit;
 
 namespace FlightSchedule.Application.Tests.Unit
@@ -15,43 +8,18 @@ namespace FlightSchedule.Application.Tests.Unit
         [Fact]
         public void GenerateFlights_should_calculate_flights_and_save_them()
         {
-            //Arrange
-            var flightServiceBuilder = new FlightServiceBuilder();
-            var schedule = CreateReserveScheduleDto();
-            var calculatedFlights = new FlightsTestListBuilder().GetSomeFlights(2).ToList();
-            flightServiceBuilder.FlightCalculationService.Calculate(Arg.Any<ReserveSchedule>())
-                .Returns(calculatedFlights);
-            var flightService = flightServiceBuilder.Build();
+            //TODO: refactor this test (use a factory or builder)
+            //Ghomi: Codes Just Moved to FlightServiceBuilder Class ;)
 
-            //Act
-            flightService.GenerateFlights(schedule);
+            //arrange
+            var flightServiceBuilder = new FlightServiceBuilder().GetSomeFlight(2);
 
-            //Assert
-            flightServiceBuilder.FlightRepository.Received(1).Save(calculatedFlights[0]);
-            flightServiceBuilder.FlightRepository.Received(1).Save(calculatedFlights[1]);
-        }
+            //act
+            flightServiceBuilder.GenerateFlights();
 
-        private static ReserveScheduleDto CreateReserveScheduleDto()
-        {
-            //TODO: Remove datetime.now
-            return new ReserveScheduleDto()
-            {
-                Aircraft = "Airbus-W350",
-                WeeklyTimetable = CreateWeeklyTimetableDto(),
-                FlightNo = "WS-2040",
-                Destination = "FRA",
-                Origin = "IKA",
-                StartReserveDate = DateTime.Now,
-                EndReserveDate = DateTime.Now
-            };
-        }
-
-        private static List<WeeklyTimetableDto> CreateWeeklyTimetableDto()
-        {
-            return new List<WeeklyTimetableDto>()
-            {
-                new WeeklyTimetableDto {DepartTime = TimeSpan.MaxValue, DayOfWeek = DayOfWeek.Friday}
-            };
+            //assert
+            flightServiceBuilder.FlightRepositoryProp.Received(1).Save(flightServiceBuilder.CalculatedFlightsProp[0]);
+            flightServiceBuilder.FlightRepositoryProp.Received(1).Save(flightServiceBuilder.CalculatedFlightsProp[1]);
         }
     }
 }
