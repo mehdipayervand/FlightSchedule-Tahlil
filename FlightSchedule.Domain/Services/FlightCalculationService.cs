@@ -12,26 +12,38 @@ namespace FlightSchedule.Domain.Services
     {
         public List<Flight> Calculate(ReserveSchedule schedule)
         {
-            var flights = new List<Flight>();
-            foreach (var dateTime in schedule.StartReserveDate
+            var specificDays = GetSpecificDaysInSchedule(schedule);
+
+            var flights = GetFlightsInTheSpecificPeriod(schedule, specificDays);
+
+            GuardAgianstNoFlightInSpecificPeriod(flights);
+
+            return flights;
+        }
+        private static IEnumerable<DateTime> GetSpecificDaysInSchedule(ReserveSchedule schedule)
+        {
+            return schedule.StartReserveDate
                 .SpecificDays(schedule.EndReserveDate,
                     schedule.WeeklyTimetable
-                        .Select(a => a.DayOfWeek)
-                        .ToArray()))
+                        .Select(a => a.DayOfWeek).ToArray());
+        }
+        private static List<Flight> GetFlightsInTheSpecificPeriod(ReserveSchedule schedule, IEnumerable<DateTime> specificDays)
+        {
+            //TODO : is LINQ better? -sohrab
+
+            List<Flight> flightsInTheSpecificPeriod = new List<Flight>();
+            foreach (var specificDay in specificDays)
             {
-                var dayOfWeekInReserves = FindDayInWeek(schedule, dateTime);
+                WeeklyTimetable dayOfWeekInReserves = FindDayInWeek(schedule, specificDay);
+
                 if (HasFlightInDay(dayOfWeekInReserves))
                 {
-                    var departDate = CalculateDepartDate(dateTime, dayOfWeekInReserves);
-                    var flight = new Flight(departDate, schedule.Aircraft, schedule.FlightNo, schedule.Route);
-                    flights.Add(flight);
+                    var departDate = CalculateDepartDate(specificDay, dayOfWeekInReserves);
+                    flightsInTheSpecificPeriod.Add(new Flight(departDate, schedule.Aircraft, schedule.FlightNo, schedule.Route));
                 }
             }
 
-            if (flights.Count == 0)
-                throw new ThereAreNoFlightsInTheSpecifiedPeriodException();
-
-            return flights;
+            return flightsInTheSpecificPeriod;
         }
 
         private static WeeklyTimetable FindDayInWeek(ReserveSchedule schedule, DateTime dateTime)
@@ -43,12 +55,17 @@ namespace FlightSchedule.Domain.Services
         {
             return dayOfWeekInReserves != null;
         }
-
         private static DateTime CalculateDepartDate(DateTime dateTime, WeeklyTimetable dayOfWeekInReserves)
         {
             var departDate = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
             departDate = departDate.Add(dayOfWeekInReserves.DepartTime);
             return departDate;
+        }
+
+        private static void GuardAgianstNoFlightInSpecificPeriod(List<Flight> flights)
+        {
+            if (!flights.Any())
+                throw new ThereAreNoFlightsInTheSpecifiedPeriodException();
         }
     }
 }

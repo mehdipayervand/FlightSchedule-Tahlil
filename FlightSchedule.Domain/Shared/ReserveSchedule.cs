@@ -6,12 +6,12 @@ namespace FlightSchedule.Domain.Shared
 {
     public class ReserveSchedule
     {
-        public string Aircraft { get; set; }
-        public string FlightNo { get; set; }
-        public Route Route { get; set; }
-        public DateTime StartReserveDate { get; set; }
-        public DateTime EndReserveDate { get; set; }
-        public List<WeeklyTimetable> WeeklyTimetable { get; set; }
+        public string Aircraft { get;private set; }
+        public string FlightNo { get; private set; }
+        public Route Route { get; private set; }
+        public DateTime StartReserveDate { get; private set; }
+        public DateTime EndReserveDate { get; private set; }
+        public List<WeeklyTimetable> WeeklyTimetable { get; private set; }
 
         public ReserveSchedule()
         {

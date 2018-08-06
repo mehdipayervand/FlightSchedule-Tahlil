@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using FlightSchedule.Application.Contracts.DataTransferObjects;
-using FlightSchedule.Domain.Model;
-using FlightSchedule.Domain.Services;
+using FlightSchedule.Application.Tests.Utils;
 using FlightSchedule.Domain.Shared;
 using NSubstitute;
 using Xunit;
 
-namespace FlightSchedule.Application.Tests.Unit
+namespace FlightSchedule.Application.Tests.Unit.Tests
 {
     public class FlightServiceTests
     {
@@ -50,7 +49,7 @@ namespace FlightSchedule.Application.Tests.Unit
         {
             return new List<WeeklyTimetableDto>()
             {
-                new WeeklyTimetableDto {DepartTime = TimeSpan.MaxValue, DayOfWeek = DayOfWeek.Friday}
+                new WeeklyTimetableDto(DayOfWeek.Friday,TimeSpan.MaxValue)
             };
         }
     }

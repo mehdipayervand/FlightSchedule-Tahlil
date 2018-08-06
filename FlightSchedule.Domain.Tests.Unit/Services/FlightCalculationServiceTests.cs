@@ -17,7 +17,7 @@ namespace FlightSchedule.Domain.Tests.Unit.Services
         public void Calculate_Should_Throw_Exception_When_There_Are_No_Flights_In_The_Specified_Period_Of_Time()
         {
             //Arrange
-            var reserveSchedule = new ReserveScheduleBuilder().WithStartReserveDate(TravelTo.SomeFutureTime())
+            var reserveSchedule = new ReserveScheduleTestBuilder().WithStartReserveDate(TravelTo.SomeFutureTime())
                 .WithEndReserveDate(TravelTo.SomeFutureTime()).Build();
 
             //Act
@@ -48,7 +48,7 @@ namespace FlightSchedule.Domain.Tests.Unit.Services
             var endReserveDate = new DateTime(2018, 04, 1);
             var weeklyTimetable = CreateWeeklyTimetable();
 
-            return new ReserveScheduleBuilder().WithRoute(route).WithStartReserveDate(startReserveDate)
+            return new ReserveScheduleTestBuilder().WithRoute(route).WithStartReserveDate(startReserveDate)
                 .WithEndReserveDate(endReserveDate).WithWeeklyTimetable(weeklyTimetable).Build();
         }
 

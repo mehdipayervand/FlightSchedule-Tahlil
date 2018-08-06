@@ -29,14 +29,15 @@ namespace Framework.Core
             if (days != null)
             {
                 for (var day = fromDate.Date; day.Date <= toDate.Date; day = day.AddDays(1))
-                    if (days.Any(a => a.ToString() == day.DayOfWeek.ToString()))
+                    if (days.Any(dayOfWeek => dayOfWeek.ToString() == day.DayOfWeek.ToString()))
                     {
                         yield return day;
                     }
             }
             else
             {
-                foreach (var dateTime in ItterrateThroughDateRange(fromDate, toDate)) yield return dateTime;
+                foreach (var dateTime in ItterrateThroughDateRange(fromDate, toDate))
+                    yield return dateTime;
             }
         }
 

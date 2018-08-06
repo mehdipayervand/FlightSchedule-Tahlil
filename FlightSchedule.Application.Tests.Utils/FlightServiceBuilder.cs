@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlightSchedule.Domain.Model;
+﻿using FlightSchedule.Domain.Model;
 using FlightSchedule.Domain.Services;
 using NSubstitute;
 
-namespace FlightSchedule.Application.Tests.Unit
+namespace FlightSchedule.Application.Tests.Utils
 {
     public class FlightServiceBuilder
     {
