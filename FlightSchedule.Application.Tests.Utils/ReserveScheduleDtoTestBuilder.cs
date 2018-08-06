@@ -8,7 +8,7 @@ using FlightSchedule.Domain.Shared;
 
 namespace FlightSchedule.Application.Tests.Utils
 {
-    public class ReserveScheduleDtoBuilder
+    public class ReserveScheduleDtoTestBuilder
     {
         public ReserveScheduleDto Build()
         {
