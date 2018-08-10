@@ -4,7 +4,13 @@ namespace FlightSchedule.Application.Contracts.DataTransferObjects
 {
     public class WeeklyTimetableDto
     {
-        public DayOfWeek DayOfWeek { get; set; }
-        public TimeSpan DepartTime { get; set; }
+        public DayOfWeek DayOfWeek { get; private set; }
+        public TimeSpan DepartTime { get; private set; }
+
+        public WeeklyTimetableDto(DayOfWeek dayOfWeek, TimeSpan departTime)
+        {
+            DayOfWeek = dayOfWeek;
+            DepartTime = departTime;
+        }
     }
 }

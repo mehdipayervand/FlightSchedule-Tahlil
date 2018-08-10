@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlightService.cs" />
+    <Compile Include="Mappers\Mapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,10 +50,11 @@
       <Name>FlightSchedule.Application.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Domain\FlightSchedule.Domain.csproj">
-      <Project>{5a5f878c-0aec-4fd9-83c3-72c689004425}</Project>
+      <Project>{5A5F878C-0AEC-4FD9-83C3-72C689004425}</Project>
       <Name>FlightSchedule.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

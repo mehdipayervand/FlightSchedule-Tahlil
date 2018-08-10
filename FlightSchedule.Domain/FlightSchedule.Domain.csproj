@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\ReserveScheduleBuilder.cs" />
     <Compile Include="Model\IFlightRepository.cs" />
     <Compile Include="Model\Flight.cs" />
     <Compile Include="Model\Exceptions\OriginIsSameAsDestinationException.cs" />

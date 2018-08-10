@@ -88,13 +88,14 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="FlightServiceBuilder.cs" />
-    <Compile Include="FlightsTestListBuilder.cs" />
-    <Compile Include="FlightServiceTests.cs" />
+    <Compile Include="Tests\FlightServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\MapperTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
@@ -104,13 +105,13 @@
       <Project>{B68CE400-7F22-4BCC-B2B6-42583F6FE515}</Project>
       <Name>FlightSchedule.Application.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FlightSchedule.Application.Tests.Utils\FlightSchedule.Application.Tests.Utils.csproj">
+      <Project>{b9fc9367-5f35-4197-ab7b-1d303cf30319}</Project>
+      <Name>FlightSchedule.Application.Tests.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Application\FlightSchedule.Application.csproj">
       <Project>{6BB3E9ED-50AF-4053-80F2-EBFA373F1A7F}</Project>
       <Name>FlightSchedule.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FlightSchedule.Domain.TestUtil\FlightSchedule.Domain.TestUtil.csproj">
-      <Project>{1AFB5188-9FAB-47F3-B7CE-B6D895970BF6}</Project>
-      <Name>FlightSchedule.Domain.TestUtil</Name>
     </ProjectReference>
     <ProjectReference Include="..\FlightSchedule.Domain\FlightSchedule.Domain.csproj">
       <Project>{5A5F878C-0AEC-4FD9-83C3-72C689004425}</Project>

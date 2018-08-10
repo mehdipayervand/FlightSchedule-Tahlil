@@ -5,6 +5,6 @@ namespace FlightSchedule.Application.Contracts
 {
     public interface IFlightService
     {
-        void GenerateFlights(ReserveScheduleDto command);
+        void GenerateFlights(ReserveScheduleDto reserveScheduleDto);
     }
 }

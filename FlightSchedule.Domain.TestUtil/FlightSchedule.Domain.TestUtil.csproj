@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlightTestBuilder.cs" />
-    <Compile Include="ReserveScheduleBuilder.cs" />
+    <Compile Include="ReserveScheduleTestBuilder.cs" />
     <Compile Include="RouteTestBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
