@@ -16,41 +16,17 @@ namespace FlightSchedule.Application.Tests.Unit.Tests
         {
             //Arrange
             var flightServiceBuilder = new FlightServiceBuilder();
-            var schedule = CreateReserveScheduleDto();
-            var calculatedFlights = new FlightsTestListBuilder().GetSomeFlights(2).ToList();
-            flightServiceBuilder.FlightCalculationService.Calculate(Arg.Any<ReserveSchedule>())
-                .Returns(calculatedFlights);
-            var flightService = flightServiceBuilder.Build();
+            flightServiceBuilder.GetSomeFlight(2);
 
             //Act
-            flightService.GenerateFlights(schedule);
+            flightServiceBuilder.GenerateFlights();
+            var firstFlight = flightServiceBuilder.SomeFlightsForReservedSchedule[0];
+            var secondFlight = flightServiceBuilder.SomeFlightsForReservedSchedule[1];
 
             //Assert
-            flightServiceBuilder.FlightRepository.Received(1).Save(calculatedFlights[0]);
-            flightServiceBuilder.FlightRepository.Received(1).Save(calculatedFlights[1]);
+            flightServiceBuilder.FlightRepositoryProp.Received(1).Save(firstFlight);
+            flightServiceBuilder.FlightRepositoryProp.Received(1).Save(secondFlight);
         }
 
-        private static ReserveScheduleDto CreateReserveScheduleDto()
-        {
-            //TODO: Remove datetime.now
-            return new ReserveScheduleDto()
-            {
-                Aircraft = "Airbus-W350",
-                WeeklyTimetable = CreateWeeklyTimetableDto(),
-                FlightNo = "WS-2040",
-                Destination = "FRA",
-                Origin = "IKA",
-                StartReserveDate = DateTime.Now,
-                EndReserveDate = DateTime.Now
-            };
-        }
-
-        private static List<WeeklyTimetableDto> CreateWeeklyTimetableDto()
-        {
-            return new List<WeeklyTimetableDto>()
-            {
-                new WeeklyTimetableDto(DayOfWeek.Friday,TimeSpan.MaxValue)
-            };
-        }
     }
 }
