@@ -2,7 +2,7 @@
 using FlightSchedule.Application.Contracts;
 using FlightSchedule.Application.Contracts.DataTransferObjects;
 
-namespace FlightSchedule.Presentation.Controllers
+namespace FlightSchedule.RestApi.Controllers
 {
     public class FlightsController : ApiController
     {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
-namespace FlightSchedule.Presentation
+namespace FlightSchedule.RestApi
 {
     public static class WebApiConfig
     {
