@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObjects\FlightDto.cs" />
     <Compile Include="DataTransferObjects\ReserveScheduleDto.cs" />
+    <Compile Include="DataTransferObjects\RouteDto.cs" />
     <Compile Include="DataTransferObjects\WeeklyTimetableDto.cs" />
     <Compile Include="IFlightService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,5 +10,6 @@ namespace FlightSchedule.Domain.Model
     {
         Flight GetById(long id);
         void Save(Flight flight);
+        List<Flight> GetByFlightNumber(string flightNumber);
     }
 }

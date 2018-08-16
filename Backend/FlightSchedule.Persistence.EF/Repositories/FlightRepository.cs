@@ -23,7 +23,12 @@ namespace FlightSchedule.Persistence.EF.Repositories
         public void Save(Flight flight)
         {
             _context.Flights.Add(flight);
-            _context.SaveChanges(); //TODO:remove this
+            _context.SaveChanges(); //TODO:remove this & move to UOW
+        }
+
+        public List<Flight> GetByFlightNumber(string flightNumber)
+        {
+            return _context.Flights.Where(a => a.FlightNo == flightNumber).ToList();
         }
     }
 }
